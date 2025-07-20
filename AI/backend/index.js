@@ -20,7 +20,7 @@ const port = process.env.PORT || 6000;
 // ✅ CORS middleware
 app.use(cors({
     origin: [
-        "http://localhost:5173", // ✅ user app
+        "https://ai-frontend-9i66.onrender.com", // ✅ user app
         "http://localhost:5174"  // ✅ admin panel
     ],
     credentials: true
