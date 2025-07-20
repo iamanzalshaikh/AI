@@ -21,7 +21,7 @@ const port = process.env.PORT || 6000;
 app.use(cors({
     origin: [
         "https://ai-frontend-9i66.onrender.com", // ✅ user app
-        "http://localhost:5174"  // ✅ admin panel
+        "https://ai-admin-nxo1.onrender.com"  // ✅ admin panel
     ],
     credentials: true
 }));
