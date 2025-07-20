@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import logo from '../assets/Vcart logo.png';
+import logo from '../assets/vcart logo.png'; 
+
 import { IoSearchCircleOutline, IoSearchCircleSharp } from "react-icons/io5";
 import { FaCircleUser } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
