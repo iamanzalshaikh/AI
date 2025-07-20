@@ -30,13 +30,13 @@ export const registration = async (req, res) => {
 
         const token = genToken(user._id);
 
-        res.cookie("token", token, {
-            httpOnly: true,
-            sameSite: "Strict",// only if secure: true and you're using HTTPS
-            secure: false,  // stay false for localhost
+       res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,        
+  sameSite: "None",    
+  maxAge: 7 * 24 * 60 * 60 * 1000
+});
 
-            maxAge: 7 * 24 * 60 * 60 * 1000,
-        });
 
         res.status(201).json({
             message: "User registered successfully",
@@ -71,12 +71,11 @@ export const login = async (req, res) => {
 
         const token = genToken(user._id);
 
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: "Strict",
-            maxAge: 7 * 24 * 60 * 60 * 1000,
-        });
+      res.cookie("token", token, {
+  httpOnly: true,
+  sameSite: "None",   
+  maxAge: 7 * 24 * 60 * 60 * 1000
+});
 
         res.status(201).json({
             message: "Login successful",
@@ -122,12 +121,12 @@ export const googleLogin = async (req, res) => {
 
         const token = genToken(user._id);
 
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: false, // set true if you're using https
-            sameSite: "Strict",
-            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-        });
+    res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,        
+  sameSite: "None",    
+  maxAge: 7 * 24 * 60 * 60 * 1000
+});
 
         res.status(200).json({
             message: "Login successful",
@@ -152,12 +151,12 @@ export const adminLogin = async (req, res) => {
         if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
             const token = await genToken1(email); // Make sure genToken1 is imported
 
-            res.cookie("token", token, {
-                httpOnly: true,
-                secure: false, // Change to true in production
-                sameSite: "Strict",
-                maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-            });
+          res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,        
+  sameSite: "None",    
+  maxAge: 7 * 24 * 60 * 60 * 1000
+});
 
             return res.status(200).json({ token });
         }
