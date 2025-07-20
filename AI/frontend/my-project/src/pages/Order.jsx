@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Title from '../component/Title';
 import { ShopDataContext } from '../context/ShopContext';
-import { AuthContext } from '../context/authContext';
+import { AuthContext } from '../context/AuthContext';
+
 import axios from 'axios';
 
 function Order() {
