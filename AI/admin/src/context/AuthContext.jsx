@@ -2,7 +2,7 @@ import React, { createContext } from "react";
 
 export const authDataContext = createContext();
 
-const serverUrl = "http://localhost:8000";
+const serverUrl =  "https://ai-backend-f9av.onrender.com"
 
 export function AuthContext({ children }) {
     const value = {
